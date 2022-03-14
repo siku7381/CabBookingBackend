@@ -1,0 +1,23 @@
+{
+  "name": "doosraproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.2",
+    "express": "^4.17.3",
+    "express-session": "^1.17.2",
+    "mongoose": "^6.2.6",
+    "nodemon": "^2.0.15",
+    "validator": "^13.7.0"
+  }
+}
