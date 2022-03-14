@@ -22,9 +22,7 @@ export const createUser = async (req, res) =>{
         const newUser = new User({...user,password:hashedPass});
         const response = await newUser.save();
         res.status(201).json({message:'User Successfully created',user:response});
-        console.log(response);
     } catch (error) {
-        console.log(error);
     }
 
 }
@@ -35,26 +33,12 @@ export const getUser = async (req, res) =>{
     try {
         const users = await User.find();
         res.status(200).json({users});
-        console.log(users);
     } catch (error) {
-        console.log(error);
         res.status(404).json({'message' : error.message});
     }
 
 }
 
-export const loginUser = async (req, res) =>{
-    const {email, password} = req.body;
-    try {
-        const user = await User.find({email,password});
-        res.status(200).json({user,message:'successfully logged in'});
-        console.log(user);
-    } catch (error) {
-        console.log(error);
-        res.status(404).json({'message' : error.message});
-    }
-
-}
 
 export const bookCab = async (req, res) => {
     try {
@@ -75,11 +59,8 @@ export const bookCab = async (req, res) => {
         });
 
         const result = checkDistance(shortestDistance,40);
-        
-
         res.status(200).json({drivers,shortestDistance,result});
     } catch (error) {
-        console.log(error);
         res.status(404).json({'message' : error.message});
     }
 }
